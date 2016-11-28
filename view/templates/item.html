@@ -1,0 +1,121 @@
+<div class="panel panel-default hidden" id="item__index">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <a href="#panelItem__index" data-toggle="collapse">Item</a>
+
+            <a href="#" id="deleteItem__index" class="btn btn-xs btn-danger delete-item pull-right">
+                <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+            </a>
+        </h3>
+    </div>
+    <div class="panel-body collapse in" id="panelItem__index">
+        <div class="form-group">
+            <label for="inputArticleNumber__index" class="col-sm-2 control-label">Article Number</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][articleNumber]" maxlength="127" id="inputArticleNumber__index" value="{{ defaultData.articleNumber }}">
+            </div>
+            <div class="col-sm-4">
+                Unique ID of item in shopping basket.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputName__index" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][name]" maxlength="127" id="inputName__index" value="{{ defaultData.name }}">
+            </div>
+            <div class="col-sm-4">
+                Item name in shopping basket.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputDescription__index" class="col-sm-2 control-label">Description</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][description]" maxlength="500" id="inputDescription__index" value="{{ defaultData.description }}">
+            </div>
+            <div class="col-sm-4">
+                Item description in shopping basket.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputQuantity__index" class="col-sm-2 control-label">Quantity</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][quantity]" maxlength="4" id="inputQuantity__index" value="{{ defaultData.quantity }}">
+            </div>
+            <div class="col-sm-4">
+                Number of items in shopping basket.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputImageUrl__index" class="col-sm-2 control-label">Image Url</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][imageUrl]" maxlength="500" id="inputImageUrl__index" value="{{ defaultData.imageUrl }}">
+            </div>
+            <div class="col-sm-4">
+                URL to an image of each item.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputUnitGrossAmount__index" class="col-sm-2 control-label">Unit Gross Amount</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][unitGrossAmount][amount]" maxlength="24" id="inputUnitGrossAmount__index" value="{{ defaultData.unitGrossAmount }}">
+            </div>
+            <div class="col-sm-4">
+                Can contain up to 19 digits followed by a decimal separator and the maximum digits allowed depending on the currency, e.g. two digits for EUR. If comma is used as decimal separator, the amount must be a string, i.e. "amount": 4.20 or "amount": "4,20".
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputUnitGrossAmountCurrency__index" class="col-sm-2 control-label">Unit Gross Amount Currency</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][unitGrossAmount][currency]" maxlength="3" id="inputUnitGrossAmountCurrency__index" value="{{ defaultData.unitGrossAmountCurrency }}">
+            </div>
+            <div class="col-sm-4">
+                Currency given as ISO 4270 three letter currency code, e.g. EUR.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputUnitNetAmount__index" class="col-sm-2 control-label">Unit Net Amount</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][unitNetAmount][amount]" maxlength="24" id="inputUnitNetAmount__index" value="{{ defaultData.unitNetAmount }}">
+            </div>
+            <div class="col-sm-4">
+                Can contain up to 19 digits followed by a decimal separator and the maximum digits allowed depending on the currency, e.g. two digits for EUR. If comma is used as decimal separator, the amount must be a string, i.e. "amount": 4.20 or "amount": "4,20".
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputUnitNetAmountCurrency__index" class="col-sm-2 control-label">Unit Net Amount Currency</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][unitNetAmount][currency]" maxlength="3" id="inputUnitNetAmountCurrency__index" value="{{ defaultData.unitNetAmountCurrency }}">
+            </div>
+            <div class="col-sm-4">
+                Currency given as ISO 4270 three letter currency code, e.g. EUR.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputUnitTaxAmount__index" class="col-sm-2 control-label">Unit Tax Amount</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][unitTaxAmount][amount]" maxlength="24" id="inputUnitTaxAmount__index" value="{{ defaultData.unitTaxAmount }}">
+            </div>
+            <div class="col-sm-4">
+                Can contain up to 19 digits followed by a decimal separator and the maximum digits allowed depending on the currency, e.g. two digits for EUR. If comma is used as decimal separator, the amount must be a string, i.e. "amount": 4.20 or "amount": "4,20".
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputUnitTaxAmountCurrency__index" class="col-sm-2 control-label">Unit Tax Amount Currency</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][unitTaxAmount][currency]" maxlength="3" id="inputUnitTaxAmountCurrency__index" value="{{ defaultData.unitTaxAmountCurrency }}">
+            </div>
+            <div class="col-sm-4">
+                Currency given as ISO 4270 three letter currency code, e.g. EUR.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputUnitTaxRate__index" class="col-sm-2 control-label">Unit Tax Rate</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="basket[items][__index][unitTaxRate]" maxlength="4" id="inputUnitTaxRate__index" value="{{ defaultData.unitTaxRate }}">
+            </div>
+            <div class="col-sm-4">
+                Percentage of tax per unit of item in shopping basket.
+            </div>
+        </div>
+    </div>
+</div>

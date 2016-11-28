@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Results</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Orders</th>
+            <th>Saved at</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for result in results %}
+        <tr>
+            <td><a href="{{ path_for('getResult',  {'orderNumber': result.order } ) }}">{{ result.order }}</a></td>
+            <td>{{ result.time|date("Y-m-d H:i") }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

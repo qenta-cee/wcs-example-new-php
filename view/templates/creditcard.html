@@ -1,0 +1,572 @@
+<div class="hidden" id="paymentMethodCreditCard-template">
+    <input type="hidden" name="storageId" id="storageId" value="">
+
+    <h3>General Information</h3>
+    <div class="form-group">
+        <label for="returnUrl" class="col-sm-2 control-label">Return Url</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="returnUrl" maxlength="255" id="returnUrl"
+                   value="{{ defaultData.returnUrl }}">
+        </div>
+        <div class="col-sm-4">
+            Return URL for outdated browsers.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="confirmUrl" class="col-sm-2 control-label">Confirm Url</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="confirmUrl" maxlength="255" id="confirmUrl"
+                   value="{{ defaultData.confirmUrl }}">
+        </div>
+        <div class="col-sm-4">
+            URL of your online shop where Wirecard sends a server-to-server confirmation.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="successUrl" class="col-sm-2 control-label">Success Url</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="successUrl" maxlength="255" id="successUrl"
+                   value="{{ defaultData.successUrl }}">
+        </div>
+        <div class="col-sm-4">
+            URL of your online shop when payment process was successful.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="cancelUrl" class="col-sm-2 control-label">Cancel Url</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="cancelUrl" maxlength="255" id="cancelUrl"
+                   value="{{ defaultData.cancelUrl }}">
+        </div>
+        <div class="col-sm-4">
+            URL of your online shop when payment process has been canceled.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="failureUrl" class="col-sm-2 control-label">Failure Url</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="failureUrl" maxlength="255" id="failureUrl"
+                   value="{{ defaultData.failureUrl }}">
+        </div>
+        <div class="col-sm-4">
+            URL of your online shop when an error occurred within payment process.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="pendingUrl" class="col-sm-2 control-label">Pending Url</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="pendingUrl" maxlength="255" id="pendingUrl"
+                   value="{{ defaultData.pendingUrl }}">
+        </div>
+        <div class="col-sm-4">
+            URL of your online shop when result of payment process could not be determined yet.
+            Provides information to your consumer if payment is pending.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="serviceUrl" class="col-sm-2 control-label">Service Url</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="serviceUrl" maxlength="255" id="serviceUrl"
+                   value="{{ defaultData.serviceUrl }}">
+        </div>
+        <div class="col-sm-4">
+            URL of web page containing your contact information (imprint).
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="language" class="col-sm-2 control-label">Language</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="language" maxlength="255" id="language"
+                   value="{{ defaultData.language }}">
+        </div>
+        <div class="col-sm-4">
+            Language for displayed texts on payment page. (ISO 3166-1)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="confirmMail" class="col-sm-2 control-label">Confirm Mail</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="confirmMail" maxlength="255" id="confirmMail"
+                   value="{{ defaultData.confirmMail }}">
+        </div>
+        <div class="col-sm-4">
+            One payment confirmation mail address for the merchant.
+        </div>
+    </div>
+
+    <hr/>
+    <h3>Order Information</h3>
+
+    <div class="form-group">
+        <label for="amount" class="col-sm-2 control-label">Amount</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="amount" maxlength="255" id="amount"
+                   value="{{ defaultData.totalAmount }}">
+        </div>
+        <div class="col-sm-4">
+            Amount of payment.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="currency" class="col-sm-2 control-label">Currency</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="currency" maxlength="255" id="currency"
+                   value="{{ defaultData.totalAmountCurrency }}">
+        </div>
+        <div class="col-sm-4">
+            Currency code of amount.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="orderDescription" class="col-sm-2 control-label">Order Description</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="orderDescription" maxlength="255" id="orderDescription"
+                   value="{{ defaultData.orderDescription }}">
+        </div>
+        <div class="col-sm-4">
+            Unique description of the consumer's order in a human readable form.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="customerStatement" class="col-sm-2 control-label">Customer Statement</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="customerStatement" maxlength="255" id="customerStatement"
+                   value="{{ defaultData.customerStatement }}">
+        </div>
+        <div class="col-sm-4">
+            Text displayed on bank statement issued to your consumer by the financial service provider.
+            Relevant information for your consumer to identify the payments made to your online shop.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="orderReference" class="col-sm-2 control-label">Order Reference</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="orderReference" maxlength="255" id="orderReference"
+                   value="{{ defaultData.orderReference }}">
+        </div>
+        <div class="col-sm-4">
+            Unique order reference ID sent from merchant to financial institution.
+            Convenient to correlate the order numbers of your online shop with the effected payments.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="orderIdent" class="col-sm-2 control-label">Order Ident</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="orderIdent" maxlength="255" id="orderIdent"
+                   value="{{ defaultData.orderIdent }}">
+        </div>
+        <div class="col-sm-4">
+            Unique ID of order which has to be the same as used for initiating the data storage.
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="autoDeposit" class="col-sm-2 control-label">Auto Deposit</label>
+        <div class="col-sm-4">
+            <input type="checkbox" name="autoDeposit" id="autoDeposit" {% if defaultData.autoDeposit == true %}checked="checked" {% endif %}value="1">
+        </div>
+        <div class="col-sm-4">
+            Enable automated debiting of payments.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="transactionIdentifier" class="col-sm-2 control-label">Transaction Identifier</label>
+        <div class="col-sm-4">
+            <select name="transactionIdentifier" id="transactionIdentifier" class="form-control">
+                <option {% if defaultData.transactionIdentifier == 'SINGLE' %}selected="selected"{% endif %}>SINGLE</option>
+                <option {% if defaultData.transactionIdentifier == 'INITIAL' %}selected="selected"{% endif %}>INITIAL</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            Possible values are SINGLE (for one-off transactions) or INITIAL (for the first transaction of a series of
+            recurring transactions).
+        </div>
+    </div>
+
+    <hr/>
+
+    <h3>Consumer Information</h3>
+
+    <div class="form-group">
+        <label for="consumerEmail" class="col-sm-2 control-label">Consumer Email</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="consumerEmail" maxlength="255" id="consumerEmail"
+                   value="{{ defaultData.consumerEmail }}">
+        </div>
+        <div class="col-sm-4">
+            E-mail address of consumer.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="consumerBirthDate" class="col-sm-2 control-label">Consumer Birth Date</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="consumerBirthDate" maxlength="255" id="consumerBirthDate"
+                   value="{{ defaultData.consumerBirthDate }}">
+        </div>
+        <div class="col-sm-4">
+            Birth date of consumer in the format YYYY-MM-DD.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="consumerIpAddress" class="col-sm-2 control-label">Consumer Ip Address</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="consumerIpAddress" maxlength="255" id="consumerIpAddress"
+                   value="{{ defaultData.consumerIpAddress }}">
+        </div>
+        <div class="col-sm-4">
+            IP address of consumer.
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="consumerUserAgent" class="col-sm-2 control-label">Consumer User Agent</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="consumerUserAgent" maxlength="255" id="consumerUserAgent"
+                   value="{{ defaultData.consumerUserAgent }}">
+        </div>
+        <div class="col-sm-4">
+            User-agent of browser of consumer.
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a href="#consumer-billing" data-toggle="collapse">Consumer Billing Data</a>
+            </h3>
+        </div>
+        <div class="panel-body collapse" id="consumer-billing">
+            <div class="form-group">
+                <label for="consumerBillingFirstname" class="col-sm-2 control-label">Consumer Billing Firstname</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerBillingFirstname" maxlength="255"
+                           id="consumerBillingFirstname"
+                           value="{{ defaultData.consumerBillingFirstname }}">
+                </div>
+                <div class="col-sm-4">
+                    First name of consumer.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerBillingLastname" class="col-sm-2 control-label">Consumer Billing Lastname</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerBillingLastname" maxlength="255"
+                           id="consumerBillingLastname"
+                           value="{{ defaultData.consumerBillingLastname }}">
+                </div>
+                <div class="col-sm-4">
+                    Last name of consumer.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerBillingAddress1" class="col-sm-2 control-label">Consumer Billing Address1</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerBillingAddress1" maxlength="255"
+                           id="consumerBillingAddress1"
+                           value="{{ defaultData.consumerBillingAddress1 }}">
+                </div>
+                <div class="col-sm-4">
+                    Name of street and optionally the house number.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerBillingAddress2" class="col-sm-2 control-label">Consumer Billing Address2</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerBillingAddress2" maxlength="255"
+                           id="consumerBillingAddress2"
+                           value="{{ defaultData.consumerBillingAddress2 }}">
+                </div>
+                <div class="col-sm-4">
+                    The house number if not already set in consumerBillingAddress1.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerBillingCity" class="col-sm-2 control-label">Consumer Billing City</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerBillingCity" maxlength="255"
+                           id="consumerBillingCity"
+                           value="{{ defaultData.consumerBillingCity }}">
+                </div>
+                <div class="col-sm-4">
+                    Billing city.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerBillingState" class="col-sm-2 control-label">Consumer Billing State</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerBillingState" maxlength="255"
+                           id="consumerBillingState"
+                           value="{{ defaultData.consumerBillingState }}">
+                </div>
+                <div class="col-sm-4">
+                    Billing state.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerBillingCountry" class="col-sm-2 control-label">Consumer Billing Country</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerBillingCountry" maxlength="255"
+                           id="consumerBillingCountry"
+                           value="{{ defaultData.consumerBillingCountry }}">
+                </div>
+                <div class="col-sm-4">
+                    Billing country code (ISO 3166-1).
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerBillingZipCode" class="col-sm-2 control-label">Consumer Billing Zip Code</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerBillingZipCode" maxlength="255"
+                           id="consumerBillingZipCode"
+                           value="{{ defaultData.consumerBillingZipCode }}">
+                </div>
+                <div class="col-sm-4">
+                    Billing ZIP code.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerBillingPhone" class="col-sm-2 control-label">Consumer Billing Phone</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerBillingPhone" maxlength="255"
+                           id="consumerBillingPhone"
+                           value="{{ defaultData.consumerBillingPhone }}">
+                </div>
+                <div class="col-sm-4">
+                    Billing phone number.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerBillingFax" class="col-sm-2 control-label">Consumer Billing Fax</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerBillingFax" maxlength="255"
+                           id="consumerBillingFax"
+                           value="{{ defaultData.consumerBillingFax }}">
+                </div>
+                <div class="col-sm-4">
+                    Billing fax number.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <a href="#consumer-shipping" data-toggle="collapse">Consumer Shipping Data</a>
+            </h3>
+        </div>
+        <div class="panel-body collapse" id="consumer-shipping">
+            <div class="form-group">
+                <label for="consumerShippingFirstname" class="col-sm-2 control-label">Consumer Shipping Firstname</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerShippingFirstname" maxlength="255"
+                           id="consumerShippingFirstname"
+                           value="{{ defaultData.consumerShippingFirstname }}">
+                </div>
+                <div class="col-sm-4">
+                    First name of consumer.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerShippingLastname" class="col-sm-2 control-label">Consumer Shipping Lastname</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerShippingLastname" maxlength="255"
+                           id="consumerShippingLastname"
+                           value="{{ defaultData.consumerShippingLastname }}">
+                </div>
+                <div class="col-sm-4">
+                    Last name of consumer.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerShippingAddress1" class="col-sm-2 control-label">Consumer Shipping Address1</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerShippingAddress1" maxlength="255"
+                           id="consumerShippingAddress1"
+                           value="{{ defaultData.consumerShippingAddress1 }}">
+                </div>
+                <div class="col-sm-4">
+                    Name of street and optionally the house number.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerShippingAddress2" class="col-sm-2 control-label">Consumer Shipping Address2</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerShippingAddress2" maxlength="255"
+                           id="consumerShippingAddress2"
+                           value="{{ defaultData.consumerShippingAddress2 }}">
+                </div>
+                <div class="col-sm-4">
+                    The house number if not already set in consumerShippingAddress1.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerShippingCity" class="col-sm-2 control-label">Consumer Shipping City</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerShippingCity" maxlength="255"
+                           id="consumerShippingCity"
+                           value="{{ defaultData.consumerShippingCity }}">
+                </div>
+                <div class="col-sm-4">
+                    Shipping city.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerShippingState" class="col-sm-2 control-label">Consumer Shipping State</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerShippingState" maxlength="255"
+                           id="consumerShippingState"
+                           value="{{ defaultData.consumerShippingState }}">
+                </div>
+                <div class="col-sm-4">
+                    Shipping state.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerShippingCountry" class="col-sm-2 control-label">Consumer Shipping Country</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerShippingCountry" maxlength="255"
+                           id="consumerShippingCountry"
+                           value="{{ defaultData.consumerShippingCountry }}">
+                </div>
+                <div class="col-sm-4">
+                    Shipping country code (ISO 3166-1).
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerShippingZipCode" class="col-sm-2 control-label">Consumer Shipping Zip Code</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerShippingZipCode" maxlength="255"
+                           id="consumerShippingZipCode"
+                           value="{{ defaultData.consumerShippingZipCode }}">
+                </div>
+                <div class="col-sm-4">
+                    Shipping zip code.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerShippingPhone" class="col-sm-2 control-label">Consumer Shipping Phone</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerShippingPhone" maxlength="255"
+                           id="consumerShippingPhone"
+                           value="{{ defaultData.consumerShippingPhone }}">
+                </div>
+                <div class="col-sm-4">
+                    Phone number of consumer.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="consumerShippingFax" class="col-sm-2 control-label">Consumer Shipping Fax</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="consumerShippingFax" maxlength="255"
+                           id="consumerShippingFax"
+                           value="{{ defaultData.consumerShippingFax }}">
+                </div>
+                <div class="col-sm-4">
+                    Fax number of consumer.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-lg btn-primary" id="show-ccard-fields">Show credit card fields</button>
+        </div>
+    </div>
+
+    <div id="ds-fields" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form class="form-horizontal" id="ccard-fields" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="cardHolderName" class="col-sm-2 control-label">Card holder name</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="cardHolderName" maxlength="30" id="cardHolderName" value="{{ defaultData.cardHolderName }}">
+                            </div>
+                            <div class="col-sm-4">
+                                Name of owner of credit card.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pan" class="col-sm-2 control-label">PAN</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="pan" maxlength="19" id="pan"  value="{{ defaultData.pan }}">
+                            </div>
+                            <div class="col-sm-4">
+                                Credit card number.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="expirationMonth" class="col-sm-2 control-label">Expiration Month</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="expirationMonth" maxlength="2" id="expirationMonth" value="{{ defaultData.expirationMonth }}">
+                            </div>
+                            <div class="col-sm-4">
+                                Expiration month of credit card.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="expirationYear" class="col-sm-2 control-label">Expiration Year</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="expirationYear" maxlength="4" id="expirationYear" value="{{ defaultData.expirationYear }}">
+                            </div>
+                            <div class="col-sm-4">
+                                Expiration year of credit card.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cardVerifyCode" class="col-sm-2 control-label">Card Verify Code</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" name="cardVerifyCode" maxlength="4" id="cardVerifyCode" value="{{ defaultData.cardVerifyCode }}">
+                            </div>
+                            <div class="col-sm-4">
+                                Verification code of credit card (aka CVC, CVC2, CVV or CID) - optional/required depending on your acceptance contract with credit card company.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                       <button type="submit" class="btn btn-lg btn-primary" id="pay">Pay</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

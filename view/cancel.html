@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Cancelled order</h1>
+<div>
+    You have cancelled your order.
+    <p>
+        <a href="{{ path_for('getInit') }}">Continue shopping</a>
+    </p>
+</div>
+{% endblock %}

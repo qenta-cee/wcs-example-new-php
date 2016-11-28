@@ -1,0 +1,114 @@
+<div class="hidden" id="paymentMethodMasterpass-template">
+    <h3>General Information</h3>
+    <div class="form-group">
+        <label for="inputOriginUrl" class="col-sm-2 control-label">Origin Url</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="originUrl" maxlength="255" id="inputOriginUrl"
+                   value="{{ defaultData.originUrl }}">
+        </div>
+        <div class="col-sm-4">
+            URL of your shop ('http://' or 'https://' is required).
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputCallbackUrl" class="col-sm-2 control-label">Callback Url</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="callbackUrl" maxlength="255" id="inputCallbackUrl"
+                   value="{{ defaultData.callbackUrl }}">
+        </div>
+        <div class="col-sm-4">
+            Redirect URL your consumer is redirected to after the interaction with Masterpass.
+        </div>
+    </div>
+
+    <hr />
+    <h3>Order Information</h3>
+    <div class="form-group">
+        <label for="inputOrderDescription" class="col-sm-2 control-label">Order Description</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="orderDescription" maxlength="24" id="inputOrderDescription" value="{{ defaultData.orderDescription }}">
+        </div>
+        <div class="col-sm-4">
+            Unique description of the consumer's order in a human readable form.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputShippingLocationProfile" class="col-sm-2 control-label">Shipping Location Profile</label>
+        <div class="col-sm-4">
+            <select name="shippingLocationProfile" id="inputShippingLocationProfile" class="form-control">
+                {% for shippingLocationProfile in shippingLocationProfiles %}
+                <option {% if defaultData.shippingLocationProfile== shippingLocationProfile %}selected="selected" {%
+                        endif %}>{{ shippingLocationProfile }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-sm-4">
+            Shipping profile id, e.g. “default” or “WDCEDACH”.
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAllowedCardTypes" class="col-sm-2 control-label">Allowed Card Types</label>
+        <div class="col-sm-4">
+            <select size="7" name="allowedCardTypes[]" id="inputAllowedCardTypes" multiple class="form-control">
+                {% for allowedCardType in allowedCardTypes %}
+                <option selected="selected">{{ allowedCardType }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="col-sm-4">
+            String array of credit card brands allowed for the current payment. Can be “amex”, “diners”, “discover”,
+            “jcb”, “maestro”, “master” and/or “visa”, e.g. ["jcb,maestro,master,visa"].
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputSuppressShippingAddressEnabled" class="col-sm-2 control-label">Suppress Shipping Address
+            Enabled</label>
+        <div class="col-sm-4">
+            <input type="checkbox" name="suppressShippingAddressEnabled" id="inputSuppressShippingAddressEnabled" {%
+                   if defaultData.suppressShippingAddressEnabled== true %}checked="checked" {% endif %}value="1">
+        </div>
+        <div class="col-sm-4">
+            Set to true, if shipping address selection should be suppressed, i.e. for selling digital goods which do
+            not need to be shipped.
+        </div>
+    </div>
+
+    <hr />
+    <h3>Basket Information</h3>
+    <div class="form-group">
+        <label for="inputTotalAmount" class="col-sm-2 control-label">Total Amount</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="basket[totalAmount][amount]" maxlength="24" id="inputTotalAmount" value="{{ defaultData.totalAmount }}">
+        </div>
+        <div class="col-sm-4">
+            Can contain up to 19 digits followed by a decimal separator and the maximum digits allowed depending on the currency, e.g. two digits for EUR. If comma is used as decimal separator, the amount must be a string, i.e. "amount": 4.20 or "amount": "4,20".
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputTotalAmountCurrency" class="col-sm-2 control-label">Total Amount Currency</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="basket[totalAmount][currency]" maxlength="3" id="inputTotalAmountCurrency" value="{{ defaultData.totalAmountCurrency }}">
+        </div>
+        <div class="col-sm-4">
+            Basket currency given as ISO 4270 three letter currency code, e.g. EUR.
+        </div>
+    </div>
+    <hr />
+
+    <h3>
+        Basket Items
+        <a href="#" id="addItem" class="btn btn-sm btn-success">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </a>
+    </h3>
+
+    <div id="items">
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-lg btn-primary" id="pay">Pay</button>
+        </div>
+    </div>
+</div>

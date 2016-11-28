@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Pending order</h1>
+<div>
+    Your order is in status pending.<br>
+    We'll send you a notification, when it has been processed.
+    <p>
+        <a href="{{ path_for('getInit') }}">Continue shopping</a>
+    </p>
+</div>
+{% endblock %}

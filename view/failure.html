@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Failure</h1>
+<div>
+    An error occurred during the payment.
+    <h2>{{ errorTitle }}</h2>
+    <div>Error code: {{ errorCode }}</div>
+    <div>Error message: {{ errorMessage }}</div>
+
+    <p>
+        <a href="{{ path_for('getInit') }}">Create a new payment</a>
+    </p>
+</div>
+{% endblock %}

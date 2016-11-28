@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Result for Order Number</h1>
+<h2>{{ parameters.orderNumber }}</h2>
+
+<h3>Response</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for key, param in parameters %}
+        <tr>
+            <td>{{ key }}</td>
+            <td>
+                {% if param is iterable %}
+                    {% for subparam in param %}
+                        {{ subparam }}
+                    {% endfor %}
+                {% else %}
+                    {{ param }}
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

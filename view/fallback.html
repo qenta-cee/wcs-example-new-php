@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<!-- DS Store Return -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+        function setResponse(response) {
+            if (typeof parent.WirecardCEE_Fallback_Request_Object == 'object') {
+                parent.WirecardCEE_Fallback_Request_Object.setResponseText(response);
+            }
+            else {
+                console.log('Not a valid seamless fallback call.');
+            }
+        }
+    </script>
+</head>
+
+<body onload='setResponse("{{ response }}");'>
+
+</body>
+</html>

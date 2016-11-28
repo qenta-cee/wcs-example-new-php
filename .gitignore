@@ -1,0 +1,43 @@
+syntax: glob
+
+### Composer template
+composer.phar
+vendor/
+reports/
+
+### Bower template
+bower_components/
+
+### Node template
+node_modules/
+
+### Maven template
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+### JetBrains template
+.idea/rest-api-masterpass.iml
+
+## Directory-based project format:
+.idea/
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+## ignore auto generated css, js and fonts in public folder
+public/css
+public/js
+public/fonts
+
+## ignore the payment data stored in the results folder
+results/

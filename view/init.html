@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block scripts %}
+<script src="https://checkout.wirecard.com/masterpass/js/WirecardCheckout.MasterPassClient.js" type="text/javascript"></script>
+<script src="{{ base_url() }}/js/app.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        app.settings = {
+            baseUrl: '{{ base_url() }}'
+        };
+
+        $('#paymentPageForm').on('submit', app.submitHandler);
+        $('#paymentSelection').find('li').on('click', app.paymentMethodSelectHandler);
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+<form class="form-horizontal" id="paymentPageForm" method="post">
+    <h3>Payment Selection</h3>
+    <ul class="list-inline" id="paymentSelection">
+        <li><a href="#" class="btn btn-lg btn-primary"><input type="radio" name="paymentMethod" id="paymentMethodMasterpass" value="MASTERPASS"> Masterpass</a></li>
+        <li><a href="#" class="btn btn-lg btn-primary"><input type="radio" name="paymentMethod" id="paymentMethodCreditCard" value="CCARD"> Credit Card</a></li>
+        <li><a href="#" class="btn btn-lg btn-primary"><input type="radio" name="paymentMethod" id="paymentMethodSofort" value="SOFORTUEBERWEISUNG"> SOFORT</a></li>
+    </ul>
+    <hr />
+
+    <div id="payment-method-form">
+    </div>
+</form>
+{% endblock %}
+
+{% block includes %}
+    {% include 'templates/item.html' %}
+    {% include 'templates/masterpass.html' %}
+    {% include 'templates/creditcard.html' %}
+    {% include 'templates/sofort.html' %}
+{% endblock %}
