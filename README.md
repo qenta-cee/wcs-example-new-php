@@ -34,5 +34,5 @@ Code in this module should follow the coding standards defined in PSR-1 and PSR-
  - **--browser**: the browser used for testing (allowed: firefox, chrome)
  - **--seleniumHost**: the host for a remote selenium host (e.G. http://localhost:4444/wd/hub)
  
- **Full example:**
- `gulp guitest --baseUri=http://localhost:8080 --browser=firefox --seleniumHost=http://localhost:4444/wd/hub`
+**Full example:**
+`gulp guitest --baseUri=http://localhost:8080 --browser=firefox --seleniumHost=http://localhost:4444/wd/hub`
