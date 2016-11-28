@@ -5,6 +5,7 @@ This project demonstrates the implementation of the Wirecard Checkout Seamless A
 
 ## Installation:
 `composer install` installs all required php dependencies.
+
 `npm install` installs all required nodejs dependencies.
 
 ## Coding Standards for PHP:
