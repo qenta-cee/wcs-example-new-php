@@ -7,9 +7,9 @@ This project demonstrates the implementation of the Wirecard Checkout Seamless A
 ## Installation:
 `composer install` installs all required php dependencies.
 
-`npm install` installs all required nodejs dependencies.
+`npm install` installs all required Node.js dependencies.
 
-## Coding Standards for PHP:
+## Coding standards for PHP:
 Code in this module should follow the coding standards defined in PSR-1 and PSR-2 (http://www.php-fig.org/psr/).
 
 ### PHPCS
@@ -27,14 +27,14 @@ Code in this module should follow the coding standards defined in PSR-1 and PSR-
 `npm test` runs full testsuite and creates coverage reports.
 
 ### Cucumber Selenium suits
- `npm run guitest` runs full test suits on local machine.
+ `npm run guitest` runs full testsuite on local machine.
  
- `gulp guitest` runs allows you to configure the selenium run.
+ `gulp guitest` runs and allows you to configure the Selenium tests.
  
  Following parameters are allowed
- - **--baseUri**: the baseUri ob the test subject (e.G. http://localhost:8080)
+ - **--baseUri**: the baseUri of the test subject (e.G. http://localhost:8080)
  - **--browser**: the browser used for testing (allowed: firefox, chrome)
- - **--seleniumHost**: the host for a remote selenium host (e.G. http://localhost:4444/wd/hub)
+ - **--seleniumHost**: the host for a remote Selenium host (e.G. http://localhost:4444/wd/hub)
  
 **Full example:**
 `gulp guitest --baseUri=http://localhost:8080 --browser=firefox --seleniumHost=http://localhost:4444/wd/hub`
